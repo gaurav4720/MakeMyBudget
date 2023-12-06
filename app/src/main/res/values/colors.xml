@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <!--   Transaction Status Colors -->
+    <color name="transaction_completed">#FFE3F8CB</color>
+    <color name="transaction_pending">#FFFA9C9C</color>
+
+    <!--    Transaction Types colors-->
+    <color name="type_income">#7DC828</color>
+    <color name="type_expense">#FF0000</color>
+
+    <!--    Transaction Category colors-->
+    <color name="category_food">#9831F1</color>
+    <color name="category_clothing">#7948EA</color>
+    <color name="category_entertainment">#53A2E8</color>
+    <color name="category_transport">#0CB80C</color>
+    <color name="category_health">#D9E656</color>
+    <color name="category_education">#FDD14A</color>
+    <color name="category_bills">#DF7E2A</color>
+    <color name="category_other">#FF0000</color>
+
+    <!--    Transaction Modes colors-->
+    <color name="mode_cash">#F44336</color>
+    <color name="mode_credit_card">#D6C104</color>
+    <color name="mode_debit_card">#379A3B</color>
+
+    <!--    Transaction Status colors-->
+    <color name="status_upcoming">#84CFF1</color>
+    <color name="status_completed">#CCF39F</color>
+    <color name="status_pending">#F3A2A2</color>
+
+    <!--    Limit Exceeded or Not-->
+    <color name="Limit_exceeded">#F44336</color>
+    <color name="limit_not_exceeded">#379A3B</color>
+
+    <!--    Bar Chart Colors-->
+    <color name="bar_chart_monthly_amount">#FF9800</color>
+    <color name="bar_chart_monthly_transactions">#354FE3</color>
+    <color name="bar_chart_years">#F44336</color>
+
+    <!--    Swipe Colors-->
+    <color name="swipe_left">#FF0000</color>
+    <color name="swipe_right">#00FF00</color>
+
+</resources>

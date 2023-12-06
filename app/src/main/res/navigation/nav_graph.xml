@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/frontScreenFragment">
+    <fragment
+        android:id="@+id/frontScreenFragment"
+        android:name="com.example.makeMyBudget.initialScreens.FrontScreenFragment"
+        android:label="front_screen"
+        tools:layout="@layout/fragment_front_screen">
+
+        <action
+            android:id="@+id/action_frontScreenFragment_to_loginScreenFragment"
+            app:destination="@id/authentication" />
+        <action
+            android:id="@+id/action_frontScreenFragment_to_userBudgetDetailsFragment"
+            app:destination="@id/userBudgetDetailsFragment" />
+        <action
+            android:id="@+id/action_frontScreenFragment_to_registerScreenFragment"
+            app:destination="@id/authentication" />
+        <action
+            android:id="@+id/action_frontScreenFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment"
+            app:popUpTo="@id/frontScreenFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/transactionDetailFragment"
+        android:name="com.example.makeMyBudget.mainScreen.transactionLibrary.TransactionDetailFragment"
+        android:label="fragment_transaction_detail"
+        tools:layout="@layout/fragment_transaction_detail">
+        <argument
+            android:name="trans_id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_transactionDetailFragment_to_addOrEditTransactionFragment"
+            app:destination="@id/addOrEditTransactionFragment" />
+        <action
+            android:id="@+id/action_transactionDetailFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+        <argument
+            android:name="CalenderOrRecents"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_transactionDetailFragment_to_calenderViewFragment"
+            app:destination="@id/calenderViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userBudgetDetailsFragment"
+        android:name="com.example.makeMyBudget.initialScreens.UserBudgetDetailsFragment"
+        android:label="fragment_user_budget_details"
+        tools:layout="@layout/fragment_user_budget_details">
+        <action
+            android:id="@+id/action_userBudgetDetailsFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.example.makeMyBudget.mainScreen.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen">
+        <action
+            android:id="@+id/action_mainScreenFragment_to_addOrEditTransactionFragment"
+            app:destination="@id/addOrEditTransactionFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_monthScreenFragment"
+            app:destination="@id/monthScreenFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_transactionDetailFragment"
+            app:destination="@id/transactionDetailFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_loginScreenFragment"
+            app:destination="@id/authentication" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_helloMushroomsFragment"
+            app:destination="@id/helloMushroomsFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_editMyDetailsFragment"
+            app:destination="@id/editMyDetailsFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_myDetailsFragment"
+            app:destination="@id/myDetailsFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addOrEditTransactionFragment"
+        android:name="com.example.makeMyBudget.mainScreen.transactionLibrary.AddOrEditTransactionFragment"
+        android:label="fragment_add_or_edit_transaction"
+        tools:layout="@layout/fragment_add_or_edit_transaction">
+        <argument
+            android:name="trans_id"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_addOrEditTransactionFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment"
+            app:popUpTo="@id/addOrEditTransactionFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_addOrEditTransactionFragment_to_monthScreenFragment"
+            app:destination="@id/monthScreenFragment" />
+        <action
+            android:id="@+id/action_addOrEditTransactionFragment_to_calenderViewFragment"
+            app:destination="@id/calenderViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/monthScreenFragment"
+        android:name="com.example.makeMyBudget.mainScreen.transactionLibrary.MonthScreenFragment"
+        android:label="fragment_month_screen"
+        tools:layout="@layout/fragment_month_screen">
+        <argument
+            android:name="monthYear"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_monthScreenFragment_to_transactionDetailFragment"
+            app:destination="@id/transactionDetailFragment" />
+        <action
+            android:id="@+id/action_monthScreenFragment_to_addOrEditTransactionFragment"
+            app:destination="@id/addOrEditTransactionFragment" />
+        <action
+            android:id="@+id/action_monthScreenFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+        <action
+            android:id="@+id/action_monthScreenFragment_to_calenderViewFragment"
+            app:destination="@id/calenderViewFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/calenderViewFragment"
+        android:name="com.example.makeMyBudget.mainScreen.transactionLibrary.CalenderViewFragment"
+        android:label="CalenderViewFragment"
+        tools:layout="@layout/fragment_calender_view">
+        <argument
+            android:name="monthYear"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_calenderViewFragment_to_transactionDetailFragment"
+            app:destination="@id/transactionDetailFragment" />
+    </fragment>
+    <navigation
+        android:id="@+id/authentication"
+        app:startDestination="@id/loginScreenFragment">
+        <fragment
+            android:id="@+id/loginScreenFragment"
+            android:name="com.example.makeMyBudget.authentication.LoginScreenFragment"
+            android:label="fragment_login_screen"
+            tools:layout="@layout/fragment_login_screen">
+            <action
+                android:id="@+id/action_loginScreenFragment_to_registerScreenFragment"
+                app:destination="@id/registerScreenFragment" />
+            <action
+                android:id="@+id/action_loginScreenFragment_to_mainScreenFragment"
+                app:destination="@id/mainScreenFragment" />
+            <action
+                android:id="@+id/action_loginScreenFragment_to_userBudgetDetailsFragment"
+                app:destination="@id/userBudgetDetailsFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/registerScreenFragment"
+            android:name="com.example.makeMyBudget.authentication.RegisterScreenFragment"
+            android:label="fragment_register_screen"
+            tools:layout="@layout/fragment_register_screen">
+            <action
+                android:id="@+id/action_registerScreenFragment_to_userBudgetDetailsFragment"
+                app:destination="@id/userBudgetDetailsFragment" />
+            <action
+                android:id="@+id/action_registerScreenFragment_to_mainScreenFragment"
+                app:destination="@id/mainScreenFragment" />
+            <action
+                android:id="@+id/action_registerScreenFragment_to_loginScreenFragment"
+                app:destination="@id/loginScreenFragment" />
+        </fragment>
+    </navigation>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.makeMyBudget.mainScreen.drawerScreens.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us">
+        <action
+            android:id="@+id/action_aboutUsFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment"
+            app:popUpTo="@id/aboutUsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/editMyDetailsFragment"
+        android:name="com.example.makeMyBudget.mainScreen.drawerScreens.EditMyDetailsFragment"
+        android:label="fragment_edit_my_details"
+        tools:layout="@layout/fragment_edit_my_details">
+        <action
+            android:id="@+id/action_editMyDetailsFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment"
+            app:popUpTo="@id/editMyDetailsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/helloMushroomsFragment"
+        android:name="com.example.makeMyBudget.mainScreen.drawerScreens.HelloMushroomsFragment"
+        android:label="fragment_hello_mushrooms"
+        tools:layout="@layout/fragment_hello_mushrooms">
+        <action
+            android:id="@+id/action_helloMushroomsFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment"
+            app:popUpTo="@id/helloMushroomsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/myDetailsFragment"
+        android:name="com.example.makeMyBudget.mainScreen.drawerScreens.MyDetailsFragment"
+        android:label="fragment_my_details"
+        tools:layout="@layout/fragment_my_details">
+        <action
+            android:id="@+id/action_myDetailsFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment"
+            app:popUpTo="@id/myDetailsFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_myDetailsFragment_to_editMyDetailsFragment"
+            app:destination="@id/editMyDetailsFragment" />
+    </fragment>
+</navigation>
